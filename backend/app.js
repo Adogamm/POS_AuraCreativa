@@ -25,7 +25,7 @@ socket.init(server);
 
 // 5. IMPORTAR RUTAS
 const authRoutes = require('./routes/authRoutes');
-const articuloRoutes = require('./routes/articuloRoutes');
+// const articuloRoutes = require('./routes/articuloRoutes');
 const movimientoRoutes = require('./routes/movimientoRoutes');
 const proveedorRoutes = require('./routes/proveedorRoutes');
 const usuariosRoutes = require('./routes/usuariosRoutes');
@@ -37,9 +37,12 @@ const configRoutes = require('./routes/configRoutes');
 const puntosRoutes = require('./routes/puntosEntregaRoutes');
 const bitacoraRoutes = require('./routes/bitacoraRoutes');
 
+const articulosRoutes = require('./modules/articulos/articulosRoutes');
+
 // 6. DEFINIR RUTAS DE API
 app.use('/api', authRoutes);
-app.use('/api', articuloRoutes);
+// app.use('/api', articuloRoutes);
+app.use('/api', articulosRoutes);
 app.use('/api', movimientoRoutes);
 app.use('/api', proveedorRoutes);
 app.use('/api/usuarios', usuariosRoutes);
