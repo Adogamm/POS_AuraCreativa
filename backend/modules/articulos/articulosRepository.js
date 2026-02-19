@@ -1,11 +1,6 @@
 const { pool } = require('../../config/db');
 
 class ArticuloRepository {
-    
-    /**
-     * Obtiene todos los artículos activos de la base de datos con su información relacionada.
-     * @returns {Promise<Array>} Una promesa que resuelve a un arreglo de artículos.
-     */
     async findAll() {
         const query = `
             SELECT "IdArticulo", "CodArticulo", "NomArticulo", "StockActual", "PrecioVenta",
