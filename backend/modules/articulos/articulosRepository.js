@@ -21,7 +21,7 @@ class ArticuloRepository {
             return result.rows;
         } catch (error) {
             console.error('Error en ArticuloRepository.findAll:', error);
-            throw error; // Propaga el error para que la capa de servicio lo maneje
+            throw error;
         } finally {
             client.release();
         }

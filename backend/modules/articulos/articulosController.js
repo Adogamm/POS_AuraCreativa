@@ -10,9 +10,15 @@ class ArticuloController {
             const articulos = await this.articuloService.getArticulos();
             res.json({
                 message: 'Artículos obtenidos exitosamente',
+                code: 200,
                 data: articulos
             });
         } catch (error) {
+            res.status(500).json({
+                message: 'Error al obtener los artículos',
+                code: 500,
+                error: error.message
+            });
             next(error);
         }
     }
